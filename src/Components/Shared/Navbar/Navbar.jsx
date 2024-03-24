@@ -10,15 +10,17 @@ const Navbar = () => {
     return (
         <div>
             <nav className='flex sticky top-0 shadow-xl justify-between items-center md:px-10 z-50 bg-gray-900 text-white'>
-                <div className='w-full z-50 md:w-auto px-4 py-8 flex justify-between items-center'>
-                    <h1 className='text-xl font-bold'>VSMG</h1>
-                    <div onClick={() => setOpen(!open)} className='text-2xl md:hidden cursor-pointer'>
-                        {open ? <IoClose /> : <GiHamburgerMenu />}
+                <div className='flex justify-start items-center gap-10'>
+                    <div className='w-full z-50 md:w-auto px-4 py-8 flex justify-between items-center'>
+                        <h1 className='text-xl font-bold'>VSMG</h1>
+                        <div onClick={() => setOpen(!open)} className='text-2xl md:hidden cursor-pointer'>
+                            {open ? <IoClose /> : <GiHamburgerMenu />}
+                        </div>
                     </div>
+                    <ul className='md:flex hidden justify-center items-center gap-10 py-5 uppercase'>
+                        <Navlinks />
+                    </ul>
                 </div>
-                <ul className='md:flex hidden justify-center items-center gap-10 py-5 uppercase'>
-                    <Navlinks />
-                </ul>
                 <div className='flex justify-center items-center gap-3'>
                     <button className='md:block hidden px-6 py-2 bg-yellow-400 rounded-full'>
                         Get Startered

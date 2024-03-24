@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { RiArrowDropDownLine } from "react-icons/ri";
+import './nav.css'
+import { Link } from 'react-router-dom';
 
 const Navlinks = () => {
 
@@ -48,7 +50,11 @@ const Navlinks = () => {
         {
             nav: 'Contact Us',
             link: '/contact',
-        }, 
+        },
+        {
+            nav: 'Dashboard',
+            link: '/dashboard',
+        },
     ];
 
     return (
@@ -58,8 +64,8 @@ const Navlinks = () => {
                     <div>
                         <div className='group cursor-pointer'>
                             <li onClick={() => heading !== item.nav ? setHeading(item.nav) : setHeading('')}
-                                className='flex justify-between md:justify-center items-center gap-1 pr-4'>
-                                {item.nav} {item.submenu && <RiArrowDropDownLine className='text-xl' />}
+                                className='flex justify-between md:justify-center items-center gap-1'>
+                                <Link to={item.link} className='nav-item'>{item.nav}</Link> {item.submenu && <RiArrowDropDownLine className='text-xl' />}
                             </li>
                             {
                                 item?.submenu && (
